@@ -1,0 +1,131 @@
+:root {
+  --main-color: #1f1c2e;
+  --secondary-color: #4A4A4A;
+  --message-box-hover: #fafcff;
+  --message-box-border: #e9ebf0;
+  --link-color-hover: #c3cff4;
+}
+
+.dark:root {
+  --main-color: #fff;
+  --secondary-color: rgba(255, 255, 255, .8);
+  --link-color-hover: rgba(195, 207, 244, 0.1);
+  --message-box-hover: #243244;
+  --message-box-border: rgba(255, 255, 255, .1);
+}
+.scroll-message-box {
+  position: fixed;
+  top: 10%;
+  left: 78%;
+  width: 300px;
+  height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border-radius: 32px;
+  animation: fadeIn 0.4s .1s ease both;
+  border: 1px solid transparent;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12);
+  overflow: auto;
+  z-index: 3;
+}
+.dark .scroll-message-box {
+  position: fixed;
+  top: 10%;
+  left: 78%;
+  width: 300px;
+  height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1f1c2e;
+  border-radius: 32px;
+  animation: fadeIn 0.4s .1s ease both;
+  z-index: 3;
+}
+
+.scroll-message-box-projects-section-header p {
+  font-size: 20px;
+  line-height: 32px;
+  font-weight: 700;
+  opacity: 0.9;
+  margin: 10px 10px 0px 10px;
+  color: var(--main-color);
+}
+
+.scroll-message-box-message-box {
+  border-top: 1px solid var(--message-box-border);
+  padding: 16px;
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.scroll-message-box-message-box:hover {
+  background-color: var(--message-box-hover);
+  border-top-color: var(--link-color-hover);
+}
+
+.scroll-message-box-message-box:hover+.message-box {
+  border-top-color: var(--link-color-hover);
+}
+
+.scroll-message-box-message-box img {
+  border-radius: 50%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  width: 40px;
+  height: 40px;
+}
+
+.scroll-message-box-messages{
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.scroll-message-box-message-content {
+  padding-left: 16px;
+  width: 100%;
+}
+
+.scroll-message-box-message-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.scroll-message-box-message-header .name {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 700;
+  color: var(--main-color);
+  margin: 0;
+}
+
+.scroll-message-box-message-line {
+  font-size: 14px;
+  line-height: 20px;
+  margin: 8px 0;
+  color: var(--secondary-color);
+  opacity: 0.7;
+}
+
+.scroll-message-box-message-line.time {
+  text-align: right;
+  margin-bottom: 0;
+}
+
+@keyframes fadeIn {
+  0% {
+   opacity: 0;
+   transform: translateY(400upx)
+  }
+ 
+  100% {
+   opacity: 1;
+   transform: translateY(0)
+  }
+}
